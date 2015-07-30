@@ -24,7 +24,7 @@
 
 struct __mystring_struct {
    char * string;
-   int len, maxlen;
+   size_t len, maxlen;
 };
 typedef struct __mystring_struct * Mystring;
 #define Mystring_size sizeof(struct __mystring_struct)
