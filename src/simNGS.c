@@ -1153,7 +1153,7 @@ int main( int argc, char * argv[] ){
                     free_SEQSTR(popped);
 
                     seq_count++;
-                    if( (seq_count%1000)==0 ){ fprintf(stderr,"\rDone: %8u",seq_count); }
+                    if( (seq_count%1000)==0 ){ fprintf(stderr,"Done: %8u\n",seq_count); }
 		}
             } else {
                 warnx("Skipping empty sequence \"%s\"",seq->name);
@@ -1201,7 +1201,7 @@ int main( int argc, char * argv[] ){
             free_CALLED(called2); called2=NULL; intensities2=NULL;
 
             seq_count++;
-            if( (seq_count%1000)==0 ){ fprintf(stderr,"\rDone: %8u",seq_count); }
+            if( (seq_count%1000)==0 ){ fprintf(stderr,"Done: %8u\n",seq_count); }
         }
     }
     // Empty and free buffer
@@ -1210,7 +1210,7 @@ int main( int argc, char * argv[] ){
     }
     free_circbuff_SEQSTR(circbuff);
     
-    fprintf(stderr,"\rFinished generating %8u sequences\n",seq_count);
+    fprintf(stderr,"Finished generating %8u sequences\n",seq_count);
     if(simopt->purity_cycles>0){ fprintf(stderr,"%8u sequences passed filter.\n",unfiltered_count);}
     if(NULL!=fpout){fclose(fpout);}
     free_ARRAY(PHREDCHAR)(ambigphred);
