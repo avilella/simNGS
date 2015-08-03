@@ -464,7 +464,7 @@ int main ( int argc, char * argv[]){
                 sampseq->name = sampname;
                 show_SEQ(stdout,sampseq, opt->output);
                 free_SEQ(sampseq);
-                if( (tot_fragments%100000)==99999 ){ fprintf(stderr,"\rDone: %8u",tot_fragments+1); }
+                if( (tot_fragments%100000)==99999 ){ fprintf(stderr,"Done: %8u\n",tot_fragments+1); }
             }
             free_SEQ(seq);
         }
@@ -472,7 +472,7 @@ int main ( int argc, char * argv[]){
         argc--;
         argv++;
     } while(argc>0);
-    fprintf(stderr,"\rFinished %8u\n",tot_fragments);
+    fprintf(stderr,"Finished %8u\n",tot_fragments);
     if(skipped_seq>0){
         fprintf(stderr,"Skipped %" SCNu32 " fragments.\n",skipped_seq);
     }
